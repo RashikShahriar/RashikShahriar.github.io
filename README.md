@@ -8,7 +8,7 @@
 
 
 ## 🌐 Socials:
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/HashtagRashik) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Rasihik-Shahriar-Akash) [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-%23007A5A.svg?logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=1mCyFIUAAAAJ&hl=en) [![ResearchGate](https://img.shields.io/badge/ResearchGate-%2300CC88.svg?logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Rashik-Akash) [![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?logo=html5&logoColor=white)](https://sites.google.com/view/rashik/)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/HashtagRashik) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Rasihik-Shahriar-Akash) [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-%23007A5A.svg?logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=1mCyFIUAAAAJ&hl=en) [![ResearchGate](https://img.shields.io/badge/ResearchGate-%2300CC88.svg?logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Rashik-Akash) [![Portfolio](https://img.shields.io/badge/Portfolio-%2300A4D9.svg?logo=portfolio&logoColor=white)](https://sites.google.com/view/rashik/)
 
 
 
