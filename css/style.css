@@ -282,6 +282,17 @@ img.svg{
 	     -o-transition: all .3s ease;
 	        transition: all .3s ease;
 }
+
+.social_wrap a i {
+    font-size: 24px; /* Increase the size of the icons */
+    margin: 0 10px; /* Add horizontal spacing between icons */
+    color: black; /* Set the icon color to black */
+}
+
+.social_wrap a i:hover {
+    color: rgb(222, 167, 0); /* Optional: Change color on hover */
+}
+
 .arlo_tm_leftpart_wrap .arlo_tm_resize.opened{right: -30px;}
 .arlo_tm_leftpart_wrap .arlo_tm_resize i{
 	color: #fff;
