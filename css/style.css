@@ -290,7 +290,7 @@ img.svg{
 }
 
 .social_wrap a i:hover {
-    color: rgb(222, 167, 0); /* Optional: Change color on hover */
+    color: #E3872D; /* Optional: Change color on hover */
 }
 
 .arlo_tm_leftpart_wrap .arlo_tm_resize.opened{right: -30px;}
