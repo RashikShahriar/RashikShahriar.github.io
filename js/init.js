@@ -512,8 +512,8 @@ function arlo_tm_animate_text(){
 	var animateSpan			= jQuery('.arlo_tm_animation_text_word');
 	
 		animateSpan.typed({
-			strings: ["A Researcher", 
-			"Actively Seeking PhD", "interested in building tech for social good"],
+			strings: ["a CSE Gold Medalist, DIU", 
+			"A Researcher", "currently seeking PhD"],
 			loop: true,
 			startDelay: 1e3,
 			backDelay: 2e3
