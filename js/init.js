@@ -35,6 +35,7 @@ jQuery(document).ready(function(){
 	arlo_tm_switcher();
 	arlo_tm_data_images();
 	arlo_tm_hamburger();
+	arlo_tm_bibtex_modal();
 	
 	
 	jQuery(window).on('scroll',function(){
@@ -512,8 +513,8 @@ function arlo_tm_animate_text(){
 	var animateSpan			= jQuery('.arlo_tm_animation_text_word');
 	
 		animateSpan.typed({
-			strings: ["a CSE Gold Medalist, DIU", 
-			"A Researcher", "currently seeking PhD"],
+			strings: ["A PhD Student", 
+			"A Researcher", "a CSE Gold Medalist, DIU"],
 			loop: true,
 			startDelay: 1e3,
 			backDelay: 2e3
@@ -773,5 +774,78 @@ function scrollRight() {
 		top: 0,
 		left: container.clientWidth / 3, // Scroll by one research item
 		behavior: 'smooth'
+	});
+}
+
+
+// -----------------------------------------------------
+// ---------------  BIBTEX MODAL (FIXED) ---------------
+// -----------------------------------------------------
+
+function arlo_tm_bibtex_modal(){
+	
+	"use strict";
+	
+	// Open modal
+	jQuery(document).on('click', '.bibtex-trigger', function(e){
+		e.preventDefault();
+		var targetId = jQuery(this).data('target');
+		jQuery('#' + targetId).addClass('active');
+		jQuery('body').addClass('bibtex-modal-open');
+		return false;
+	});
+	
+	// Close button
+	jQuery(document).on('click', '.bibtex-close', function(e){
+		e.preventDefault();
+		jQuery(this).closest('.bibtex-modal').removeClass('active');
+		jQuery('body').removeClass('bibtex-modal-open');
+		return false;
+	});
+	
+	// Close on overlay click
+	jQuery(document).on('click', '.bibtex-modal', function(e){
+		if(jQuery(e.target).hasClass('bibtex-modal')){
+			jQuery(this).removeClass('active');
+			jQuery('body').removeClass('bibtex-modal-open');
+		}
+	});
+	
+	// Close on ESC key
+	jQuery(document).on('keydown', function(e){
+		if(e.key === "Escape" || e.keyCode === 27){
+			jQuery('.bibtex-modal.active').removeClass('active');
+			jQuery('body').removeClass('bibtex-modal-open');
+		}
+	});
+	
+	// Copy button
+	jQuery(document).on('click', '.bibtex-copy-btn', function(e){
+		e.preventDefault();
+		
+		var button = jQuery(this);
+		var pre = button.closest('.bibtex-modal-content').find('pre');
+		var text = pre.text();
+		
+		// Create temporary textarea
+		var textarea = document.createElement('textarea');
+		textarea.value = text;
+		textarea.style.position = 'fixed';
+		textarea.style.opacity = '0';
+		document.body.appendChild(textarea);
+		textarea.select();
+		
+		try {
+			document.execCommand('copy');
+			button.html('<i class="fa-solid fa-check"></i> Copied!');
+			setTimeout(function(){
+				button.html('<i class="fa-regular fa-copy"></i> Copy');
+			}, 2000);
+		} catch (err) {
+			console.error('Failed to copy text: ', err);
+		}
+		
+		document.body.removeChild(textarea);
+		return false;
 	});
 }
