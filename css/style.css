@@ -3060,6 +3060,42 @@ body.bibtex-modal-open {
 	}
 }
 
+/* Custom scrollbar for news section */
+#news .blog_list > div {
+	scrollbar-width: thin;
+	scrollbar-color: #a0a5b1 #e0e0e0;
+}
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+#news .blog_list > div::-webkit-scrollbar {
+	width: 8px;
+}
+
+#news .blog_list > div::-webkit-scrollbar-track {
+	background: #e0e0e0;
+	border-radius: 10px;
+}
+
+#news .blog_list > div::-webkit-scrollbar-thumb {
+	background: #041230;
+	border-radius: 10px;
+}
+
+#news .blog_list > div::-webkit-scrollbar-thumb:hover {
+	background: #E3872D;
+}
+
+
+/* Single border around entire news section */
+#news .arlo_tm_list_wrap {
+	border: 1px solid #e0e0e0 !important;
+	border-radius: 12px !important;
+	padding: 20px !important;
+	background: #F6F7FD !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+
 /*---------------------------------------------------*/
 /*	15) ARLO MEDIA QUERIES (FOR SMALL DEVICES)
 /*---------------------------------------------------*/
