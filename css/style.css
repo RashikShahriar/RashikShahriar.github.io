@@ -2717,6 +2717,350 @@ img.svg{
 
 
 /*---------------------------------------------------*/
+/*	RESEARCH PUBLICATION STYLES
+/*---------------------------------------------------*/
+
+.pub-type-badge {
+	display: inline-block;
+	padding: 3px 8px;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-right: 8px;
+	color: white;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.pub-type-journal {
+	background-color: #28a745;
+}
+
+.pub-type-conference {
+	background-color: #e91e63;
+}
+
+.pub-type-book {
+	background-color: #ff9800;
+}
+
+.publication-wrapper {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-wrapper:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.project-links {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-top: 15px;
+}
+
+.project-links a {
+	border: 2px solid #000;
+	border-radius: 8px;
+	padding: 8px 12px;
+	background: none;
+	color: #000;
+	text-decoration: none;
+	transition: box-shadow 0.3s ease;
+}
+
+.project-links a:hover {
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+	color: #000;
+}
+
+/* Mobile Responsive for Research Publications */
+@media (max-width: 768px) {
+	.project-links {
+		flex-direction: column;
+	}
+	
+	.project-links a {
+		text-align: center;
+		width: 100%;
+	}
+	
+	.publication-wrapper {
+		padding: 15px !important;
+		margin-bottom: 15px;
+	}
+	
+	.pub-type-badge {
+		font-size: 10px;
+		padding: 2px 6px;
+	}
+}
+
+
+/* BibTeX Dropdown Styles */
+.bibtex-content {
+	display: none;
+	margin-top: 10px;
+	padding: 15px;
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	position: relative;
+}
+
+.bibtex-content.active {
+	display: block;
+}
+
+.bibtex-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.bibtex-header span {
+	font-weight: 600;
+	font-size: 14px;
+	color: #333;
+}
+
+.bibtex-content pre {
+	background: #2d2d2d;
+	color: #f8f8f2;
+	padding: 15px;
+	border-radius: 4px;
+	overflow-x: auto;
+	margin: 0;
+	font-family: 'Courier New', monospace;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.copy-button {
+	background: none;
+	border: 2px solid #333;
+	border-radius: 6px;
+	padding: 5px 10px;
+	cursor: pointer;
+	color: #333;
+	font-size: 12px;
+	transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+	background: #333;
+	color: #fff;
+}
+
+.copy-button i {
+	margin-right: 5px;
+}
+
+/* BibTeX Modal Styles Popup */
+
+.bibtex-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 99999;
+	justify-content: center;
+	align-items: center;
+}
+
+.bibtex-modal.active {
+	display: flex !important;
+}
+
+.bibtex-modal-content {
+	background: white;
+	border-radius: 12px;
+	padding: 25px;
+	max-width: 700px;
+	width: 90%;
+	max-height: 80vh;
+	overflow-y: auto;
+	position: relative;
+	box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.bibtex-close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	color: #666;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	z-index: 10;
+}
+
+.bibtex-close:hover {
+	background: #f0f0f0;
+	color: #000;
+}
+
+.bibtex-modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	padding-right: 40px;
+	border-bottom: 2px solid #e0e0e0;
+}
+
+.bibtex-modal-header h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin: 0;
+	flex: 1;
+}
+
+.bibtex-modal pre {
+	background: #2d2d2d;
+	color: #f8f8f2;
+	padding: 20px;
+	border-radius: 8px;
+	overflow-x: auto;
+	margin: 0;
+	font-family: 'Courier New', monospace;
+	font-size: 14px;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.bibtex-copy-btn {
+	background: #000;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 8px 16px;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.bibtex-copy-btn:hover {
+	background: #333;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.bibtex-copy-btn i {
+	font-size: 14px;
+}
+
+body.bibtex-modal-open {
+	overflow: hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+	.bibtex-modal-content {
+		width: 95%;
+		padding: 20px;
+	}
+	
+	.bibtex-modal-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		padding-right: 40px;
+	}
+	
+	.bibtex-copy-btn {
+		width: 100%;
+		justify-content: center;
+	}
+	
+	.bibtex-modal pre {
+		font-size: 12px;
+		padding: 15px;
+	}
+}
+
+
+/* Education Section Styles*/
+
+.education-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.education-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+.degree-badge {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.education-highlights ul li {
+	position: relative;
+	padding-left: 20px;
+	margin-bottom: 5px;
+	color: #333;
+	font-size: 14px;
+}
+
+.education-highlights ul li i {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	font-size: 12px;
+}
+
+/* Mobile Responsive for Education Cards */
+@media (max-width: 768px) {
+	.education-card > div {
+		flex-direction: column !important;
+		text-align: center;
+	}
+	
+	.education-card > div > div:first-child {
+		flex: 0 0 auto !important;
+		margin: 0 auto 20px auto;
+	}
+	
+	.education-highlights ul {
+		padding-left: 0 !important;
+		text-align: left;
+	}
+}
+
+/*---------------------------------------------------*/
 /*	15) ARLO MEDIA QUERIES (FOR SMALL DEVICES)
 /*---------------------------------------------------*/
 
