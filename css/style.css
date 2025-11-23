@@ -3658,7 +3658,116 @@ body.bibtex-modal-open {
 	}
 }
 
+/* ========================================
+   MOBILE IMAGE FIX - Works with actual HTML structure
+   ======================================== */
 
+/* ========================================
+   MOBILE ONLY (768px and below)
+   ======================================== */
+
+@media (max-width: 768px) {
+	
+	/* The leftbox container - set explicit dimensions */
+	.arlo_tm_about_wrap .leftbox {
+		width: 280px !important;
+		height: 315px !important; /* 280 * 1.126 = 315px */
+		max-width: 280px !important;
+		min-height: 315px !important;
+		margin: 0 auto 30px auto !important;
+		padding-right: 0 !important;
+		position: relative !important;
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+	
+	/* The image layer - absolute positioning */
+	.arlo_tm_about_wrap .leftbox .image.layer {
+		position: absolute !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		z-index: 2 !important;
+		display: block !important;
+	}
+	
+	/* The inner div with background image */
+	.arlo_tm_about_wrap .leftbox .image.layer .inner {
+		position: absolute !important;
+		top: 0 !important;
+		bottom: 0 !important;
+		left: 0 !important;
+		right: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		background-size: cover !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		display: block !important;
+	}
+	
+	/* Force background image if JavaScript doesn't load it */
+	.arlo_tm_about_wrap .leftbox .image.layer .inner[data-img-url*="Rashik2"] {
+		background-image: url('../img/about/Rashik2.JPG') !important;
+	}
+	
+	/* Border layer */
+	.arlo_tm_about_wrap .leftbox .border.layer {
+		position: absolute !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		z-index: 1 !important;
+		display: block !important;
+	}
+	
+	.arlo_tm_about_wrap .leftbox .border.layer .inner {
+		position: absolute !important;
+		top: 15px !important;
+		bottom: -15px !important;
+		left: 15px !important;
+		right: -15px !important;
+		border: 6px solid #041230 !important;
+		display: block !important;
+	}
+	
+	/* Content area */
+	.arlo_tm_about_wrap .rightbox {
+		width: 100% !important;
+		padding-left: 0 !important;
+	}
+	
+	/* Stack layout */
+	.arlo_tm_about_wrap .author_wrap {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+}
+
+/* ========================================
+   VERY SMALL MOBILE (480px and below)
+   ======================================== */
+
+@media (max-width: 480px) {
+	.arlo_tm_about_wrap .leftbox {
+		width: 240px !important;
+		height: 270px !important; /* 240 * 1.126 = 270px */
+		max-width: 240px !important;
+		min-height: 270px !important;
+	}
+	
+	.arlo_tm_about_wrap .leftbox .border.layer .inner {
+		top: 12px !important;
+		bottom: -12px !important;
+		left: 12px !important;
+		right: -12px !important;
+		border: 5px solid #041230 !important;
+	}
+}
 
 /*---------------------------------------------------*/
 /*	15) ARLO MEDIA QUERIES (FOR SMALL DEVICES)
