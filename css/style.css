@@ -3060,10 +3060,182 @@ body.bibtex-modal-open {
 	}
 }
 
+/* ========================================
+   COMPLETE MOBILE RESPONSIVE CSS
+   All fixes combined
+   ======================================== */
+
+
+
+/* ========================================
+   RESEARCH SECTION - Card Border & Shadow
+   ======================================== */
+
+/* Research card styling with border and shadow */
+.publication-wrapper {
+	border: 1px solid #e0e0e0 !important;
+	border-radius: 12px !important;
+	padding: 25px 25px 30px 25px !important;
+	background: #ffffff !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+	transition: all 0.3s ease !important;
+}
+
+/* Make sure buttons stay inside */
+.project-links a {
+	margin-bottom: 0 !important;
+}
+
+/* Alternative fix: Add specific padding to the flex container */
+#research .arlo_tm_list_wrap li {
+	margin-bottom: 30px !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+	.publication-wrapper,
+	#research .arlo_tm_list_wrap li > div {
+		padding: 20px 15px 25px 15px !important; /* Extra bottom padding on mobile too */
+	}
+}
+
+
+/* ========================================
+   RESEARCH SECTION - Mobile Layout Fix
+   ======================================== */
+
+/* Keep research cards in proper layout on mobile */
+@media (max-width: 768px) {
+	
+	/* Adjust padding for mobile */
+	.publication-wrapper,
+	#research .arlo_tm_list_wrap li > div {
+		padding: 20px 15px !important;
+	}
+	
+	/* Research publication wrapper - stack vertically */
+	.publication-wrapper > div,
+	#research .arlo_tm_list_wrap li > div > div {
+		flex-direction: column !important;
+		gap: 15px !important;
+	}
+	
+	/* Content section - full width */
+	.publication-wrapper > div > div:first-child,
+	#research .arlo_tm_list_wrap li > div > div > div:first-child {
+		flex: 1 !important;
+		min-width: 100% !important;
+		order: 2; /* Content goes below image */
+	}
+	
+	/* Image section - centered, full width */
+	.publication-wrapper > div > div:last-child,
+	#research .arlo_tm_list_wrap li > div > div > div:last-child {
+		flex: 0 0 auto !important;
+		max-width: 100% !important;
+		width: 100% !important;
+		order: 1; /* Image goes on top */
+	}
+	
+	/* Image itself - responsive */
+	.publication-wrapper img,
+	#research .arlo_tm_list_wrap li img {
+		width: 100% !important;
+		max-width: 100% !important;
+		height: auto !important;
+		border-radius: 8px;
+	}
+	
+	/* Project links - stack vertically or wrap */
+	.project-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	
+	.project-links a {
+		flex: 1 1 auto;
+		min-width: 120px;
+	}
+	
+	/* Date badge and pub type */
+	.date_wrap,
+	.pub-type-badge {
+		font-size: 12px !important;
+	}
+	
+	/* Title */
+	.title_holder h3 {
+		font-size: 16px !important;
+		line-height: 1.4 !important;
+	}
+	
+	/* Description */
+	.definition p {
+		font-size: 13px !important;
+	}
+}
+
+
+/* ========================================
+   EDUCATION SECTION - Mobile Fix
+   ======================================== */
+
+@media (max-width: 768px) {
+	/* Timeline adjustments */
+	#academiccredentials li {
+		padding-left: 25px !important;
+	}
+	
+	/* Timeline line and dot positioning */
+	#academiccredentials .news-line {
+		left: 4px !important;
+	}
+	
+	#academiccredentials .news-dot {
+		left: -1px !important;
+	}
+}
+
+
+/* ========================================
+   NEWS SECTION - Container Border & Shadow
+   ======================================== */
+
+/* Single border around entire news section */
+#news .arlo_tm_list_wrap {
+	border: 1px solid #e0e0e0 !important;
+	border-radius: 12px !important;
+	padding: 20px !important;
+	background: #F6F7FD !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Remove individual item styling */
+#news .arlo_tm_list_wrap li {
+	border: none !important;
+	box-shadow: none !important;
+	background: transparent !important;
+	padding: 0 !important;
+	margin-bottom: 12px !important;
+}
+
+/* Optional: Add subtle hover effect to individual items */
+#news .arlo_tm_list_wrap li:hover {
+	background: rgba(4, 18, 48, 0.03) !important;
+	border-radius: 8px;
+	transition: background 0.2s ease;
+}
+
+
+/* ========================================
+   NEWS SECTION - Custom Scrollbar
+   ======================================== */
+
 /* Custom scrollbar for news section */
 #news .blog_list > div {
 	scrollbar-width: thin;
-	scrollbar-color: #a0a5b1 #e0e0e0;
+	scrollbar-color: #041230 #e0e0e0;
 }
 
 /* For Webkit browsers (Chrome, Safari, Edge) */
@@ -3086,14 +3258,284 @@ body.bibtex-modal-open {
 }
 
 
-/* Single border around entire news section */
-#news .arlo_tm_list_wrap {
+/* ========================================
+   NEWS SECTION - Mobile Fix
+   ======================================== */
+
+@media (max-width: 768px) {
+	/* Scrollable container height adjustment */
+	#news .arlo_tm_list_wrap > div {
+		max-height: 350px !important;
+	}
+	
+	/* News items */
+	#news .arlo_tm_list_wrap li p {
+		flex-wrap: wrap !important;
+		gap: 8px !important;
+	}
+	
+	/* Date badges */
+	#news .arlo_tm_list_wrap li span[style*="min-width"] {
+		min-width: 80px !important;
+		font-size: 10px !important;
+	}
+	
+	/* News content text */
+	#news .arlo_tm_list_wrap li p > span:last-child {
+		flex: 1 1 100%;
+		font-size: 13px !important;
+	}
+}
+
+
+/* FORCE research cards to contain buttons */
+#research .arlo_tm_list_wrap li > div {
 	border: 1px solid #e0e0e0 !important;
 	border-radius: 12px !important;
-	padding: 20px !important;
-	background: #F6F7FD !important;
+	padding: 25px 25px 35px 25px !important; /* Extra bottom padding: 35px */
+	background: #ffffff !important;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+	transition: all 0.3s ease !important;
 }
+
+/* Ensure the wrapper has proper box-sizing */
+#research .arlo_tm_list_wrap li > div,
+#research .arlo_tm_list_wrap li > div * {
+	box-sizing: border-box !important;
+}
+
+
+/* ========================================
+   ABOUT SECTION - Mobile Image Display
+   ======================================== */
+
+/* Force about image to display */
+.arlo_tm_about_wrap .leftbox {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.arlo_tm_about_wrap .leftbox .about_image_wrap {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.arlo_tm_about_wrap .leftbox .about_image_wrap .image {
+	display: block !important;
+	visibility: visible !important;
+	position: relative !important;
+}
+
+.arlo_tm_about_wrap .leftbox .about_image_wrap .image .inner {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url('../img/about/Rashik2.JPG') !important;
+}
+
+/* Ensure the wrapper image is visible for sizing */
+.arlo_tm_about_wrap .leftbox .about_image_wrap img {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+}
+
+/* Border frame */
+.arlo_tm_about_wrap .leftbox .about_image_wrap .border {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.arlo_tm_about_wrap .leftbox .about_image_wrap .border .inner {
+	position: absolute;
+	top: 25px !important;
+	bottom: -25px !important;
+	left: 25px !important;
+	right: -25px !important;
+	border: 10px solid #041230;
+}
+
+/* Image layer should be on top */
+.arlo_tm_about_wrap .leftbox .about_image_wrap .image {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Desktop specific */
+@media (min-width: 1200px) {
+	.arlo_tm_about_wrap .leftbox {
+		display: block !important;
+		width: 35% !important;
+		float: left !important;
+		padding-right: 40px !important;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 65% !important;
+		float: right !important;
+		padding-left: 65px !important;
+	}
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1199px) {
+	.arlo_tm_about_wrap .leftbox {
+		display: block !important;
+		width: 100% !important;
+		padding-right: 0 !important;
+		margin-bottom: 40px !important;
+		max-width: 400px !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 100% !important;
+		padding-left: 0 !important;
+	}
+}
+
+/* Mobile: Keep the image */
+@media (max-width: 768px) {
+	.arlo_tm_about_wrap .leftbox {
+		display: block !important;
+		width: 100% !important;
+		padding-right: 0 !important;
+		margin-bottom: 30px;
+	}
+	
+	.arlo_tm_about_wrap .leftbox .about_image_wrap .image {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 100% !important;
+		padding-left: 0 !important;
+	}
+}
+
+
+/* ========================================
+   ABOUT SECTION - Fix Overlapping & Button Layout
+   ======================================== */
+
+/* Fix the flex layout to prevent overlapping */
+.arlo_tm_about_wrap .author_wrap {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: flex-start !important;
+	gap: 40px !important;
+}
+
+/* Left box - Image */
+.arlo_tm_about_wrap .leftbox {
+	flex: 0 0 35% !important;
+	max-width: 35% !important;
+	padding-right: 0 !important;
+}
+
+/* Right box - Content */
+.arlo_tm_about_wrap .rightbox {
+	flex: 1 !important;
+	padding-left: 0 !important;
+	width: auto !important;
+}
+
+/* Ensure buttons stay in one row */
+.arlo_tm_about_wrap .buttons_wrap ul {
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	gap: 15px !important;
+	align-items: center !important;
+}
+
+.arlo_tm_about_wrap .buttons_wrap ul li {
+	margin: 0 !important;
+	float: none !important;
+}
+
+/* Button sizing - make them more compact if needed */
+.arlo_tm_about_wrap .buttons_wrap ul li a {
+	white-space: nowrap !important;
+	display: inline-block !important;
+}
+
+/* Medium screens */
+@media (max-width: 1200px) {
+	.arlo_tm_about_wrap .author_wrap {
+		flex-direction: column !important;
+	}
+	
+	.arlo_tm_about_wrap .leftbox {
+		flex: 0 0 auto !important;
+		max-width: 400px !important;
+		margin: 0 auto 30px auto !important;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 100% !important;
+		flex: 1 !important;
+	}
+}
+
+/* Mobile - Stack buttons if needed */
+@media (max-width: 768px) {
+	.arlo_tm_about_wrap .author_wrap {
+		flex-direction: column !important;
+	}
+	
+	.arlo_tm_about_wrap .leftbox {
+		flex: 0 0 auto !important;
+		max-width: 300px !important;
+		width: 100% !important;
+		margin: 0 auto 30px auto !important;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 100% !important;
+	}
+	
+	/* Allow buttons to wrap on very small screens */
+	.arlo_tm_about_wrap .buttons_wrap ul {
+		flex-wrap: wrap !important;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Stack buttons vertically on very small screens */
+	.arlo_tm_about_wrap .buttons_wrap ul {
+		flex-direction: column !important;
+		align-items: stretch !important;
+	}
+	
+	.arlo_tm_about_wrap .buttons_wrap ul li {
+		width: 100% !important;
+	}
+	
+	.arlo_tm_about_wrap .buttons_wrap ul li a {
+		display: block !important;
+		text-align: center !important;
+		width: 100% !important;
+	}
+}
+
 
 
 /*---------------------------------------------------*/
