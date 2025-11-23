@@ -3536,6 +3536,128 @@ body.bibtex-modal-open {
 	}
 }
 
+/* ========================================
+   Correct Dimensions for Rashik2
+   ======================================== */
+
+/* The leftbox container */
+.arlo_tm_about_wrap .leftbox {
+	position: relative;
+	width: 35%;
+	min-height: 450px; /* Will be calculated based on container width */
+}
+
+/* Image layer with background */
+.arlo_tm_about_wrap .leftbox .image.layer {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+.arlo_tm_about_wrap .leftbox .image.layer .inner {
+	position: absolute !important;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-size: cover !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+}
+
+/* Create aspect ratio container using padding trick */
+.arlo_tm_about_wrap .leftbox::before {
+	content: "";
+	display: block;
+	width: 100%;
+	padding-top: 112.6%; /* 2309/2050 = 1.126 aspect ratio */
+}
+
+/* Make layers position absolutely within the container */
+.arlo_tm_about_wrap .leftbox .image.layer,
+.arlo_tm_about_wrap .leftbox .border.layer {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Border layer */
+.arlo_tm_about_wrap .leftbox .border.layer {
+	z-index: 1;
+}
+
+.arlo_tm_about_wrap .leftbox .border.layer .inner {
+	position: absolute !important;
+	top: 25px !important;
+	bottom: -25px !important;
+	left: 25px !important;
+	right: -25px !important;
+	border: 10px solid #041230;
+}
+
+/* Desktop - maintain aspect ratio */
+@media (min-width: 1200px) {
+	.arlo_tm_about_wrap .leftbox {
+		width: 35%;
+		padding-right: 40px;
+	}
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1199px) {
+	.arlo_tm_about_wrap .leftbox {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto 40px auto;
+		padding-right: 0;
+	}
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+	.arlo_tm_about_wrap .leftbox {
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto 30px auto;
+		padding-right: 0;
+	}
+	
+	.arlo_tm_about_wrap .leftbox .border.layer .inner {
+		top: 15px !important;
+		bottom: -15px !important;
+		left: 15px !important;
+		right: -15px !important;
+		border: 6px solid #041230;
+	}
+}
+
+/* Ensure the author_wrap uses flexbox properly */
+.arlo_tm_about_wrap .author_wrap {
+	display: flex;
+	align-items: flex-start;
+	gap: 40px;
+}
+
+.arlo_tm_about_wrap .rightbox {
+	flex: 1;
+	padding-left: 0;
+}
+
+@media (max-width: 1199px) {
+	.arlo_tm_about_wrap .author_wrap {
+		flex-direction: column;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 100%;
+	}
+}
+
 
 
 /*---------------------------------------------------*/
