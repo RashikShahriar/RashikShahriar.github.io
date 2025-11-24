@@ -3769,6 +3769,152 @@ body.bibtex-modal-open {
 	}
 }
 
+
+/* ========================================
+   MOBILE DEVICE SPECIFIC FIX
+   Targets actual mobile devices, not just small screens
+   ======================================== */
+
+/* Use both max-width and max-device-width to catch all mobile devices */
+@media only screen and (max-width: 768px),
+       only screen and (max-device-width: 768px) {
+	
+	/* Image container with explicit dimensions */
+	.arlo_tm_about_wrap .leftbox {
+		width: 280px !important;
+		height: 315px !important;
+		max-width: 280px !important;
+		min-height: 315px !important;
+		margin: 0 auto 30px auto !important;
+		padding-right: 0 !important;
+		position: relative !important;
+		display: block !important;
+	}
+	
+	/* Image layer */
+	.arlo_tm_about_wrap .leftbox .image.layer {
+		position: absolute !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		z-index: 2 !important;
+	}
+	
+	.arlo_tm_about_wrap .leftbox .image.layer .inner {
+		position: absolute !important;
+		top: 0 !important;
+		bottom: 0 !important;
+		left: 0 !important;
+		right: 0 !important;
+		background-size: cover !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+	}
+	
+	/* Force background image */
+	.arlo_tm_about_wrap .leftbox .image.layer .inner[data-img-url] {
+		background-image: url('../img/about/Rashik2.JPG') !important;
+	}
+	
+	/* Border layer */
+	.arlo_tm_about_wrap .leftbox .border.layer {
+		position: absolute !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		z-index: 1 !important;
+	}
+	
+	.arlo_tm_about_wrap .leftbox .border.layer .inner {
+		position: absolute !important;
+		top: 15px !important;
+		bottom: -15px !important;
+		left: 15px !important;
+		right: -15px !important;
+		border: 6px solid #041230 !important;
+	}
+	
+	/* Layout */
+	.arlo_tm_about_wrap .author_wrap {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+	
+	.arlo_tm_about_wrap .rightbox {
+		width: 100% !important;
+		padding-left: 0 !important;
+	}
+	
+	/* Buttons */
+	.arlo_tm_about_wrap .buttons_wrap ul {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		gap: 10px !important;
+	}
+	
+	.arlo_tm_about_wrap .buttons_wrap ul li {
+		margin: 0 !important;
+		float: none !important;
+	}
+}
+
+/* Target high-DPI mobile devices specifically */
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (max-width: 768px) and (min-resolution: 192dpi) {
+	
+	.arlo_tm_about_wrap .leftbox {
+		width: 280px !important;
+		height: 315px !important;
+		max-width: 280px !important;
+		min-height: 315px !important;
+	}
+}
+
+/* iPhone specific (including iPhone 15 Pro Max) */
+@supports (-webkit-touch-callout: none) {
+	@media only screen and (max-width: 768px) {
+		.arlo_tm_about_wrap .leftbox {
+			width: 280px !important;
+			height: 315px !important;
+			max-width: 280px !important;
+			min-height: 315px !important;
+			position: relative !important;
+		}
+		
+		.arlo_tm_about_wrap .leftbox .image.layer .inner {
+			background-image: url('../img/about/Rashik2.JPG') !important;
+		}
+	}
+}
+
+/* Very small devices */
+@media only screen and (max-width: 480px),
+       only screen and (max-device-width: 480px) {
+	.arlo_tm_about_wrap .leftbox {
+		width: 240px !important;
+		height: 270px !important;
+		max-width: 240px !important;
+		min-height: 270px !important;
+	}
+	
+	.arlo_tm_about_wrap .buttons_wrap ul {
+		flex-direction: column !important;
+	}
+	
+	.arlo_tm_about_wrap .buttons_wrap ul li {
+		width: 100% !important;
+	}
+	
+	.arlo_tm_about_wrap .buttons_wrap ul li a {
+		display: block !important;
+		text-align: center !important;
+	}
+}
+
 /*---------------------------------------------------*/
 /*	15) ARLO MEDIA QUERIES (FOR SMALL DEVICES)
 /*---------------------------------------------------*/
