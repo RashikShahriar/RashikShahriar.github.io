@@ -849,3 +849,54 @@ function arlo_tm_bibtex_modal(){
 		return false;
 	});
 }
+
+/* ========================================
+   ADD THIS JAVASCRIPT TO YOUR init.js
+   Mobile Device Detection & Fix
+   ======================================== */
+
+jQuery(document).ready(function($) {
+	
+	// Detect if it's an actual mobile device
+	function isMobileDevice() {
+		return (typeof window.orientation !== "undefined") || 
+		       (navigator.userAgent.indexOf('IEMobile') !== -1) ||
+		       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	}
+	
+	// Apply mobile-specific class
+	if (isMobileDevice()) {
+		$('body').addClass('is-mobile-device');
+		
+		// Force image dimensions on mobile
+		$('.arlo_tm_about_wrap .leftbox').css({
+			'width': '280px',
+			'height': '315px',
+			'max-width': '280px',
+			'min-height': '315px',
+			'margin': '0 auto 30px auto',
+			'position': 'relative',
+			'display': 'block'
+		});
+		
+		// Force image background
+		var imgUrl = $('.arlo_tm_about_wrap .leftbox .image.layer .inner').attr('data-img-url');
+		if (imgUrl) {
+			$('.arlo_tm_about_wrap .leftbox .image.layer .inner').css({
+				'background-image': 'url(' + imgUrl + ')',
+				'background-size': 'cover',
+				'background-position': 'center',
+				'background-repeat': 'no-repeat',
+				'position': 'absolute',
+				'top': '0',
+				'bottom': '0',
+				'left': '0',
+				'right': '0'
+			});
+		}
+		
+		// Log for debugging
+		console.log('Mobile device detected. Image dimensions applied.');
+	}
+	
+});
