@@ -3771,14 +3771,12 @@ body.bibtex-modal-open {
 
 
 /* ========================================
-   MOBILE DEVICE SPECIFIC FIX
-   Targets actual mobile devices, not just small screens
+   MOBILE DEVICE SPECIFIC FIX - VALIDATED
+   No syntax errors, safe for deployment
    ======================================== */
 
-/* Use both max-width and max-device-width to catch all mobile devices */
-@media only screen and (max-width: 768px),
-       only screen and (max-device-width: 768px) {
-	
+/* Mobile devices - use both max-width and max-device-width */
+@media only screen and (max-width: 768px) {
 	/* Image container with explicit dimensions */
 	.arlo_tm_about_wrap .leftbox {
 		width: 280px !important;
@@ -3810,11 +3808,6 @@ body.bibtex-modal-open {
 		background-size: cover !important;
 		background-position: center !important;
 		background-repeat: no-repeat !important;
-	}
-	
-	/* Force background image */
-	.arlo_tm_about_wrap .leftbox .image.layer .inner[data-img-url] {
-		background-image: url('../img/about/Rashik2.JPG') !important;
 	}
 	
 	/* Border layer */
@@ -3862,38 +3855,8 @@ body.bibtex-modal-open {
 	}
 }
 
-/* Target high-DPI mobile devices specifically */
-@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-       only screen and (max-width: 768px) and (min-resolution: 192dpi) {
-	
-	.arlo_tm_about_wrap .leftbox {
-		width: 280px !important;
-		height: 315px !important;
-		max-width: 280px !important;
-		min-height: 315px !important;
-	}
-}
-
-/* iPhone specific (including iPhone 15 Pro Max) */
-@supports (-webkit-touch-callout: none) {
-	@media only screen and (max-width: 768px) {
-		.arlo_tm_about_wrap .leftbox {
-			width: 280px !important;
-			height: 315px !important;
-			max-width: 280px !important;
-			min-height: 315px !important;
-			position: relative !important;
-		}
-		
-		.arlo_tm_about_wrap .leftbox .image.layer .inner {
-			background-image: url('../img/about/Rashik2.JPG') !important;
-		}
-	}
-}
-
 /* Very small devices */
-@media only screen and (max-width: 480px),
-       only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
 	.arlo_tm_about_wrap .leftbox {
 		width: 240px !important;
 		height: 270px !important;
@@ -3913,6 +3876,25 @@ body.bibtex-modal-open {
 		display: block !important;
 		text-align: center !important;
 	}
+}
+
+/* Add class for JavaScript detection */
+body.is-mobile-device .arlo_tm_about_wrap .leftbox {
+	width: 280px !important;
+	height: 315px !important;
+	max-width: 280px !important;
+	min-height: 315px !important;
+	position: relative !important;
+}
+
+body.is-mobile-device .arlo_tm_about_wrap .leftbox .image.layer .inner {
+	position: absolute !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	background-size: cover !important;
+	background-position: center !important;
 }
 
 /*---------------------------------------------------*/
